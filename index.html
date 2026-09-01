@@ -125,6 +125,7 @@
 <ul>
   <li>匿名のプレイヤー識別子（UAS ID・匿名認証）: アカウント登録は不要で、氏名・メールアドレス等と結び付きません</li>
   <li>IP アドレス: プレイヤー同士の通信を中継するために使われます（Relay の中継機能上、構造的に必須です）</li>
+  <li>技術的な診断情報（接続エラーやクラッシュに関する記録）: Unity のサービスがオンライン接続の品質維持・障害対応のために処理することがあります。開発者が個人を特定する目的で使うことはありません</li>
 </ul>
 <p>これらは対戦相手同士の接続を成立させ、通信を中継するためだけに使われ、広告や行動トラッキングには使われません。部屋コードで参加者を限定する方式で、チャット機能や名前・プロフィールの入力欄はありません。通信は標準的な HTTPS（暗号化通信）で行われます。</p>
 <p>これらの情報の保持期間は、開発者ではなく Unity Technologies 社の規約・ポリシーに従います。詳細は <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity プライバシーポリシー</a>をご覧ください。</p>
@@ -156,6 +157,7 @@
 <ul>
   <li>An anonymous player identifier (UAS ID, via anonymous authentication) — no account registration is required, and it is not linked to your name or email address</li>
   <li>Your IP address — used to relay traffic between players (inherent to how the Relay service works)</li>
+  <li>Technical diagnostic data (records about connection errors and crashes) — Unity's services may process this to keep the online service reliable and to investigate failures; the developer never uses it to identify individuals</li>
 </ul>
 <p>This data is used solely to connect players and relay play sessions — never for advertising or behavioral tracking. Sessions are limited to participants who share a room code; there is no chat and no name/profile entry. All communication uses standard HTTPS encryption.</p>
 <p>Retention of this data is governed by Unity Technologies' own terms and policies, not by the developer. See the <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Privacy Policy</a>.</p>
