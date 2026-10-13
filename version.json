@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "note": "オンラインに入る前の確認(アプリが GET で読むだけ)。運用は docs/release/version-check.md。format は 1 のまま変えない。",
+  "online": {
+    "protocolMin": 23,
+    "protocolMax": 23
+  },
+  "latestBuild": {
+    "ios": 30,
+    "android": 0
+  },
+  "store": {
+    "ios": "https://testflight.apple.com/join/PbkYrNq1",
+    "testflight": "https://testflight.apple.com/join/PbkYrNq1",
+    "android": "https://play.google.com/store/apps/details?id=com.nigiripanic.game"
+  }
+}
