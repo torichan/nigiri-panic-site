@@ -110,7 +110,7 @@
 
 <section id="privacy">
 <h2>プライバシーポリシー / Privacy Policy</h2>
-<p class="updated">最終確認 2026-10-07 / Last confirmed 2026-10-07</p>
+<p class="updated">最終確認 2026-10-13 / Last confirmed 2026-10-13</p>
 
 <div class="lang-block">
 <span class="lang-label">日本語</span>
@@ -118,10 +118,10 @@
 <p>「にぎりパニック」（以下「本アプリ」）は、Yokke が提供します。</p>
 
 <h3>開発者が収集する情報</h3>
-<p>本アプリ自体は、個人情報を収集・送信しません。ゲームの進行状況・設定は、お使いの端末の中にのみ保存されます。広告表示、行動トラッキング、アカウント作成はありません。</p>
+<p>本アプリ自体は、個人情報を収集・送信しません。ゲームの進行状況・設定は、お使いの端末の中にのみ保存されます。広告表示、行動トラッキング、アカウント作成はありません。Unity エンジンが持つ、解析・診断・端末の統計を Unity へ送る機能は、設定で切っています。</p>
 
 <h3>アプリ内課金について</h3>
-<p>本アプリには、世界2以降を開くためのアプリ内課金(非消耗型・買い切り、1回のみのお支払い)があります。世界1とチュートリアルは無料の体験版としてずっと遊べます。定期購読は現在ありません(将来、オンラインでホスト役になるための定期購読を追加する可能性がありますが、追加する場合はこのポリシーを更新してお知らせします)。</p>
+<p>本アプリには、世界2以降を開くためのアプリ内課金(非消耗型・買い切り、1回のみのお支払い)があります。世界1とチュートリアルは無料の体験版としてずっと遊べます。また、オンラインで部屋を作る(ホストになる)ための自動更新の定期購読「オンライン ホストパス」があります(部屋に入るだけなら不要です)。定期購読の支払い・更新・解約も Apple が処理し、開発者は「いつまで有効か」だけを端末の中で確かめます。</p>
 <p>お支払い(クレジットカード番号等)は Apple(App Store)が処理し、開発者はこれらの支払い情報を一切受け取りません。開発者が確認するのは「購入済みかどうか」だけで、これは Apple の StoreKit がお使いの端末の中で確かめた記録をアプリが読み取ることで判断しており、購入や決済に関する情報を開発者のサーバーへ送信することはありません。購入者の氏名・メールアドレス等、個人を特定できる情報も開発者には渡りません。</p>
 <p>購入は「設定 → そのほか → かったものを復元」、または購入の案内画面からいつでも復元できます。お子様の誤って購入してしまうことを防ぐため、購入前に確認画面を表示するほか、Apple のファミリー共有・「承認と購入のリクエスト」(保護者の承認)の仕組みにそのまま対応しています。</p>
 
@@ -132,22 +132,27 @@
   <li>IP アドレス: プレイヤー同士の通信を中継するために使われます（Relay の中継機能上、構造的に必須です）</li>
   <li>技術的な診断情報（接続エラーやクラッシュに関する記録）: Unity のサービスがオンライン接続の品質維持・障害対応のために処理することがあります。開発者が個人を特定する目的で使うことはありません</li>
 </ul>
+<p>オンラインの前の年の確認: 「みんなであそぶ」を初めて開くとき、生まれた年をお聞きします。13 歳未満の方は、保護者の方の確認(大人向けの計算)を通った場合にだけ、保護者の方の同意のうえでオンライン協力を使えます。上記の Unity のサービス(匿名認証・Relay)は、この確認を通った後にだけ使われ、確認の前やオフラインの遊び(ひとり・同じ端末でのみんなで)では使われません。入力された生まれた年は、その場の判定に使うだけで、保存も送信もしません。端末の中に残すのは「13 歳以上か」「保護者の同意済みか」の印だけで、「設定 → そのほか → オンラインの年の確認」からいつでもやり直せます(保護者の方が同意を取り消す場合も同じです)。</p>
 <p>同じ部屋の参加者には、ゲームの進み具合として「これまでに出した料理の数」とそこから決まるレベル(例: Lv.12 / 3,240 皿)が表示されます。この値は端末の中に保存され、部屋の中継のあいだ相手の端末へ届くだけで、開発者のサーバ等には保存されません。氏名などの個人情報ではありません。</p>
-<p>これらは対戦相手同士の接続を成立させ、通信を中継するためだけに使われ、広告や行動トラッキングには使われません。部屋コードで参加者を限定する方式で、チャット機能や名前・プロフィールの入力欄はありません。通信は標準的な HTTPS（暗号化通信）で行われます。</p>
+<p>同じ部屋の参加者には、あなたが選んだオンラインの名前(アプリが用意したことばと番号の組み合わせ。自由に文字を入力することはできません)も届きます。また、部屋を作った人(ホスト)の端末にだけ、ホストが部屋から出した人を見分けるための短い識別子(匿名のプレイヤー識別子から作った、元に戻せない値)が届きます。どちらも部屋の中継のあいだ相手の端末へ届くだけで、開発者のサーバ等には保存されません。名前はお使いの端末の中にだけ保存され、ホーム画面の「なまえ」でいつでも選び直せます。</p>
+<p>これらは対戦相手同士の接続を成立させ、通信を中継するためだけに使われ、広告や行動トラッキングには使われません。部屋コードで参加者を限定する方式で、チャット機能や、名前・プロフィールを自由に入力する欄はありません。通信は標準的な HTTPS（暗号化通信）で行われます。</p>
 <p>これらの情報の保持期間は、開発者ではなく Unity Technologies 社の規約・ポリシーに従います。詳細は Unity プライバシーポリシー（<a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">https://unity.com/legal/privacy-policy</a>）をご覧ください。</p>
+
+<h3>オンラインに入る前のバージョンの確認</h3>
+<p>「みんなであそぶ」でオンラインに入ろうとしたとき（上の年の確認を通った後）にだけ、本アプリが最新のバージョンかを確かめるため、公開ページ（<a href="version.json">https://torichan.github.io/nigiri-panic-site/version.json</a>。読めないときは同じ内容の写し https://raw.githubusercontent.com/torichan/nigiri-panic-site/main/version.json）にある小さなファイル（バージョンの情報だけ）を読みます。どちらも GitHub 社のサーバです。読むだけで、端末の識別子・氏名・ゲームの記録など、お客様の情報は一切送りません。ただし、インターネットの通信の仕組み上、端末の IP アドレスと標準の接続情報（アプリの名前・OS の種類など）が GitHub 社に届きます。開発者がこれらを受け取ることはなく、広告や行動トラッキングには使いません。読んだ結果は 10 分間だけ端末のメモリに覚え、保存はしません。この確認が読めなかったとき（電波が弱いときなど）は、オンラインには入れません（オフラインの遊びは今までどおり遊べます）。</p>
 
 <h3>識別子の削除</h3>
 <p>オンラインプレイで生成された匿名識別子の削除を希望される場合は、下記の連絡先までご連絡ください。開発者が Unity のツールを用いて削除します。</p>
 
 <h3>お子様のプライバシー</h3>
-<p>本アプリは全年齢向けです。氏名・連絡先の入力欄はなく、チャット機能もありません。</p>
+<p>本アプリは子供から大人までが遊べるゲームです。広告はなく、氏名・連絡先・名前を自由に入力する欄も、チャット機能もありません。オンラインの名前は、アプリが用意したことばと番号から選ぶだけです。オンライン協力を初めて使うときは年の確認があり、13 歳未満の方は保護者の方の確認を通った場合にだけ使えます(上記「オンラインの前の年の確認」)。保護者の方は、下記の連絡先へ、オンラインで生成された匿名識別子の削除を依頼できます。</p>
 
 <h3>変更について</h3>
 <p>本ポリシーを変更する場合は、このページで告知します。</p>
 
 <h3>連絡先</h3>
 <p>com.yy.app@gmail.com</p>
-<p class="updated">改定日: 2026-10-07</p>
+<p class="updated">改定日: 2026-10-13</p>
 </div>
 
 <div class="lang-block">
@@ -156,10 +161,10 @@
 <p>Nigiri Panic ("the App") is provided by Yokke.</p>
 
 <h3>Information we collect</h3>
-<p>The App itself does not collect or transmit personal information. Game progress and settings are stored only on your device. There are no ads, no behavioral tracking, and no account creation.</p>
+<p>The App itself does not collect or transmit personal information. Game progress and settings are stored only on your device. There are no ads, no behavioral tracking, and no account creation. The Unity engine's analytics, diagnostics and hardware-statistics reporting to Unity are turned off in the App's settings.</p>
 
 <h3>In-app purchases</h3>
-<p>The App offers a one-time, non-consumable in-app purchase that unlocks World 2 and beyond. World 1 and the tutorial remain free to play indefinitely. There are currently no subscriptions (a future subscription for hosting online play may be added; if so, this policy will be updated).</p>
+<p>The App offers a one-time, non-consumable in-app purchase that unlocks World 2 and beyond. World 1 and the tutorial remain free to play indefinitely. The App also offers an auto-renewing subscription, "Online Host Pass," which is required only to create (host) an online room; joining a room does not require it. Subscription payments, renewals and cancellations are also handled by Apple, and the App only checks on your device until when the subscription is active.</p>
 <p>Payment (e.g., credit card details) is processed entirely by Apple (the App Store); the developer never receives this payment information. The only thing the developer's app checks is whether the purchase has been made, and it does this by reading the record Apple's StoreKit verifies locally on your device — no purchase or payment data is sent to any developer server. The developer never receives the purchaser's name, email address, or other personally identifying information.</p>
 <p>Purchases can be restored at any time from Settings → Other → "Restore Purchases," or from the purchase screen itself. To help prevent accidental purchases by children, the App shows a confirmation step before any purchase and fully supports Apple's Family Sharing and Ask to Buy (parental approval) features.</p>
 
@@ -170,28 +175,33 @@
   <li>Your IP address — used to relay traffic between players (inherent to how the Relay service works)</li>
   <li>Technical diagnostic data (records about connection errors and crashes) — Unity's services may process this to keep the online service reliable and to investigate failures; the developer never uses it to identify individuals</li>
 </ul>
+<p>Age check before online play: The first time you open "Play Online", the App asks for your year of birth. Players under 13 can use online co-op only after a parent or guardian passes a parent check (an adult-level arithmetic question), which means the parent agrees. The Unity services above (anonymous authentication and Relay) are used only after this check is passed — never before it, and never for offline play (solo, or everyone on one device). The year you enter is used only for this check on the spot; it is neither saved nor sent. The device keeps only a flag for "13 or older" or "parent agreed", which can be reset at any time from Settings → Other → "Online age check" (this is also how a parent withdraws consent).</p>
 <p>Other participants in the same room can see your game progress: the total number of dishes you have served and the level derived from it (e.g. "Lv.12 / 3,240 dishes"). This value is stored on your device and is only relayed to the other players' devices during the session; it is not stored on any server operated by the developer, and it is not personal information such as your name.</p>
-<p>This data is used solely to connect players and relay play sessions — never for advertising or behavioral tracking. Sessions are limited to participants who share a room code; there is no chat and no name/profile entry. All communication uses standard HTTPS encryption.</p>
+<p>Other participants in the same room also receive the online name you picked (a combination of words and a number provided by the App — you cannot type free text). In addition, only the device of the player who created the room (the host) receives a short identifier (a one-way value derived from the anonymous player identifier) used to recognize players the host has removed from the room. Both are only relayed during the session and are not stored on any server operated by the developer. Your name is stored only on your device and can be changed at any time with "Name" on the home screen.</p>
+<p>This data is used solely to connect players and relay play sessions — never for advertising or behavioral tracking. Sessions are limited to participants who share a room code; there is no chat and no free-text name/profile entry. All communication uses standard HTTPS encryption.</p>
 <p>Retention of this data is governed by Unity Technologies' own terms and policies, not by the developer. See the Unity Privacy Policy: <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">https://unity.com/legal/privacy-policy</a></p>
+
+<h3>Version check before going online</h3>
+<p>Only when you try to go online with "Play Online" (after passing the age check above), the App reads one small public file (version information only) to check whether you have the latest version: https://torichan.github.io/nigiri-panic-site/version.json (or, if that cannot be read, an identical copy at https://raw.githubusercontent.com/torichan/nigiri-panic-site/main/version.json). Both are served by GitHub. The App only reads the file; it sends no device identifier, name, game data or any other information about you. As with any internet request, your device's IP address and standard connection details (such as the app name and OS type) reach GitHub. The developer does not receive them and does not use them for advertising or tracking. The result is kept in your device's memory for 10 minutes and is not saved. If this check cannot be read (for example with a weak signal), you cannot go online; offline play is unaffected.</p>
 
 <h3>Deleting your identifier</h3>
 <p>To request deletion of the anonymous identifier created for online play, contact us below and we will delete it using Unity's tools.</p>
 
 <h3>Children's privacy</h3>
-<p>The App is suitable for all ages. It has no name/contact entry fields and no chat.</p>
+<p>The App is a game for children and adults. It has no ads, no fields for typing names or contact details, and no chat. Online names are only picked from words and numbers provided by the App. Online co-op asks for an age check the first time; players under 13 can use it only after a parent passes the parent check (see "Age check before online play" above). Parents can ask us at the contact below to delete the anonymous identifier created for online play.</p>
 
 <h3>Changes</h3>
 <p>Any changes to this policy will be announced on this page.</p>
 
 <h3>Contact</h3>
 <p>com.yy.app@gmail.com</p>
-<p class="updated">Effective date: 2026-10-07</p>
+<p class="updated">Effective date: 2026-10-13</p>
 </div>
 </section>
 
 <section id="terms">
 <h2>利用規約 / Terms of Service</h2>
-<p class="updated">最終確認 2026-10-07 / Last confirmed 2026-10-07</p>
+<p class="updated">最終確認 2026-10-13 / Last confirmed 2026-10-13</p>
 
 <div class="lang-block">
 <span class="lang-label">日本語</span>
@@ -205,6 +215,12 @@
   <li>サーバの保守等により、予告なくオンライン機能を停止・変更することがあります</li>
 </ul>
 
+<h3>1-2. オンラインの名前と、部屋から出すこと</h3>
+<ul>
+  <li>オンラインで表示される名前は、アプリが用意したことばと番号を選んで作ります(自由に文字を入力することはできません)。名前は端末の中にだけ保存され、ホーム画面の「なまえ」でいつでも選び直せます</li>
+  <li>部屋を作った人(ホスト)は、部屋の中のプレイヤーを部屋から出すことができます。出されたプレイヤーは、その部屋には入り直せません</li>
+</ul>
+
 <h3>2. 禁止事項</h3>
 <ul>
   <li>本アプリの改造、チート行為、通信の妨害</li>
@@ -214,12 +230,14 @@
 
 <h3>3. アプリ内課金について</h3>
 <ul>
-  <li>世界1とチュートリアルは無料の体験版です。世界2から先は、App 内課金(非消耗型・買い切り・1回のみのお支払い)により、購入した Apple ID・端末(ファミリー共有を含む)で継続してご利用いただけます。ローカル協力・オンライン協力はどちらも購入なしでご利用いただけます</li>
+  <li>世界1とチュートリアルは無料の体験版です。世界2から先は、App 内課金(非消耗型・買い切り・1回のみのお支払い)により、購入した Apple ID・端末(ファミリー共有を含む)で継続してご利用いただけます。ローカル協力はいつでも購入なしでご利用いただけます</li>
   <li>価格は App Store Connect の設定に従い、App Store の表示価格が優先します。価格は将来変更される場合がありますが、価格の変更は既に購入済みの方の権利に影響しません</li>
   <li>お支払い・返金の手続きは Apple の規約(App Store の利用規約)に従います。開発者は返金の可否を決定する権限を持ちません</li>
   <li>購入内容は「設定 → そのほか → かったものを復元」等からいつでも復元できます</li>
   <li>未成年の方が購入する場合は、保護者の方の同意のもと、Apple のファミリー共有・承認と購入のリクエスト等の仕組みをご利用ください</li>
-  <li>現在、定期購読(サブスクリプション)はありません。将来オンラインのホスト機能等に定期購読を追加する場合は、この規約を改定してお知らせします</li>
+  <li>オンラインで部屋を作る(ホストになる)には、自動更新の定期購読「オンライン ホストパス」(1か月または1年)が必要です。部屋に入るだけなら購読は不要で、いつでも無料です。ホストが本編(世界2から先)を購入していれば、部屋の参加者は世界2から先の面もいっしょに遊べます</li>
+  <li>オンライン ホストパスは、購入を確定した時に App Store のアカウントに請求されます。各期間の終わる24時間前までに解約しない限り、同じ価格・同じ期間で自動的に更新され、期間の終わる前の24時間以内に次の期間の代金が請求されます。解約・プランの変更は、端末の「設定」→ 自分の名前 →「サブスクリプション」(またはアプリの「かんりする」)からいつでもできます。解約しても、その期間の終わりまではご利用いただけます</li>
+  <li>購入・定期購読は、購入したストア(App Store)の端末でのみ有効です。他のストアの端末へは引き継がれません</li>
 </ul>
 
 <h3>4. 免責</h3>
@@ -236,7 +254,7 @@
 
 <h3>7. お問い合わせ</h3>
 <p>com.yy.app@gmail.com</p>
-<p class="updated">制定日: 2026-08-23 / 改定日: 2026-10-07</p>
+<p class="updated">制定日: 2026-08-23 / 改定日: 2026-10-13</p>
 </div>
 
 <div class="lang-block">
@@ -251,6 +269,12 @@
   <li>Online features may be suspended or changed without notice for maintenance or other reasons.</li>
 </ul>
 
+<h3>1-2. Online names and removing players</h3>
+<ul>
+  <li>Your online name is built by picking words and a number provided by the App (you cannot type free text). Your name is stored only on your device and can be changed at any time with "Name" on the home screen.</li>
+  <li>The player who created the room (the host) can remove players from the room. A removed player cannot rejoin that room.</li>
+</ul>
+
 <h3>2. Prohibited conduct</h3>
 <ul>
   <li>Modifying the App, cheating, or interfering with its network communication</li>
@@ -260,12 +284,14 @@
 
 <h3>3. In-app purchases</h3>
 <ul>
-  <li>World 1 and the tutorial are a free demo. World 2 onward is unlocked with a non-consumable, one-time in-app purchase, and stays unlocked for the purchasing Apple ID / device (including Family Sharing). Both local and online co-op are available without any purchase.</li>
+  <li>World 1 and the tutorial are a free demo. World 2 onward is unlocked with a non-consumable, one-time in-app purchase, and stays unlocked for the purchasing Apple ID / device (including Family Sharing). Local co-op is always available without any purchase.</li>
   <li>Prices follow the settings in App Store Connect; the price shown in the App Store controls. Prices may change in the future, but a price change does not affect the rights of anyone who already purchased.</li>
   <li>Payment and refunds are governed by Apple's own terms (the App Store's terms of service). The developer has no authority to grant or deny refunds.</li>
   <li>Purchases can be restored at any time via "Restore Purchases" (Settings → Other, or the purchase screen).</li>
   <li>If a minor makes a purchase, it should be made with a parent or guardian's consent, using Apple's Family Sharing / Ask to Buy features.</li>
-  <li>There are currently no subscriptions. If a subscription (e.g., for online hosting) is added in the future, these terms will be updated and announced.</li>
+  <li>Creating an online room (being the host) requires the auto-renewing subscription "Online Host Pass" (1 month or 1 year). Joining a room never requires a subscription and is always free. If the host has purchased the full game (World 2 onward), everyone in the room can play those stages together.</li>
+  <li>Payment for the Online Host Pass is charged to your App Store account at confirmation of purchase. The subscription automatically renews for the same price and period unless it is canceled at least 24 hours before the end of the current period, and your account is charged for renewal within 24 hours before the end of the current period. You can cancel or change plans at any time in Settings → your name → Subscriptions on your device (or via "Manage" in the App). If you cancel, you can keep using the pass until the end of the current period.</li>
+  <li>Purchases and subscriptions are valid only on devices that use the store where you bought them (the App Store). They do not transfer to devices that use another store.</li>
 </ul>
 
 <h3>4. Disclaimer</h3>
@@ -282,7 +308,7 @@
 
 <h3>7. Contact</h3>
 <p>com.yy.app@gmail.com</p>
-<p class="updated">Effective date: 2026-10-07</p>
+<p class="updated">Effective date: 2026-10-13</p>
 </div>
 </section>
 
