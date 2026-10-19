@@ -6,11 +6,11 @@
     "protocolMax": 23
   },
   "latestBuild": {
-    "ios": 30,
+    "ios": 33,
     "android": 0
   },
   "store": {
-    "ios": "https://testflight.apple.com/join/PbkYrNq1",
+    "ios": "https://apps.apple.com/app/id6797676852",
     "testflight": "https://testflight.apple.com/join/PbkYrNq1",
     "android": "https://play.google.com/store/apps/details?id=com.nigiripanic.game"
   }
