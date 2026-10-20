@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>にぎりパニック / Nigiri Panic</title>
+<style>
+  [hidden] { display: none !important; }
+  body { margin: 0; padding: 40px 16px; text-align: center; background: #fff8ee; color: #3a2a1a;
+         font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { line-height: 1.6; }
+  a.btn { display: inline-block; margin: 8px; padding: 12px 22px; border-radius: 12px; background: #c0392b;
+          color: #fff; text-decoration: none; font-weight: bold; }
+  p.note { font-size: 14px; color: #6b5a4a; }
+</style>
+</head>
+<body>
+<!--
+  入手ページ(1.0.2 の合言葉の共有のリンク先。アプリの InviteLink が ?ct=invite を付けて開かせる)。
+  開いた端末に合わせて App Store か Google Play へ移るだけ。何も記録せず、どこにも送らない(外の物も読まない)。
+  ct は App Store の App 分析で流入を数える印。英小文字・数字・_ の 32 字までだけを受け、それ以外は site にする。
+  Google Play で公開したら ANDROID_LIVE を true にする(それまで Android の人には「近日公開」を出す)。
+-->
+<h1>にぎりパニック</h1>
+<p id="msg">お店へ移動しています… / Opening the store…</p>
+<p>
+  <a class="btn" id="ios" href="https://apps.apple.com/app/apple-store/id6797676852?pt=125653050&amp;ct=site&amp;mt=8">App Store</a>
+  <a class="btn" id="android" href="https://play.google.com/store/apps/details?id=com.nigiripanic.game">Google Play</a>
+</p>
+<p class="note" id="android-soon" hidden>Android 版は近日公開です。/ The Android version is coming soon.</p>
+<p class="note"><a href="./">公式サイト / Official site</a></p>
+<script>
+  (function () {
+    var ANDROID_LIVE = false;
+    var m = /[?&]ct=([a-z][a-z0-9_]{0,31})(?:&|$)/.exec(location.search);
+    var ct = m ? m[1] : 'site';
+    var ios = 'https://apps.apple.com/app/apple-store/id6797676852?pt=125653050&ct=' + ct + '&mt=8';
+    var play = 'https://play.google.com/store/apps/details?id=com.nigiripanic.game&referrer='
+             + encodeURIComponent('utm_source=' + ct + '&utm_campaign=' + ct);
+    document.getElementById('ios').href = ios;
+    document.getElementById('android').href = play;
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    if (!ANDROID_LIVE) {
+      document.getElementById('android').hidden = true;
+      document.getElementById('android-soon').hidden = false;
+    }
+    if (isIOS) { location.replace(ios); return; }
+    if (isAndroid && ANDROID_LIVE) { location.replace(play); return; }
+    document.getElementById('msg').textContent = isAndroid
+      ? 'Android 版は近日公開です。/ The Android version is coming soon.'
+      : 'お使いの端末のお店を選んでください。/ Choose your store.';
+  })();
+</script>
+</body>
+</html>
