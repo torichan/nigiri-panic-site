@@ -5,6 +5,7 @@
     "protocolMin": 23,
     "protocolMax": 23
   },
+  "hostPass": "required",
   "latestBuild": {
     "ios": 36,
     "android": 0
