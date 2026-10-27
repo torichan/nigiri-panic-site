@@ -2,8 +2,8 @@
   "format": 1,
   "note": "オンラインに入る前の確認(アプリが GET で読むだけ)。運用は docs/release/version-check.md。format は 1 のまま変えない。",
   "online": {
-    "protocolMin": 23,
-    "protocolMax": 23
+    "protocolMin": 26,
+    "protocolMax": 26
   },
   "hostPass": "free",
   "latestBuild": {
