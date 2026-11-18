@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>にぎりパニック / Nigiri Panic</title>
+<style>
+  [hidden] { display: none !important; }
+  /* 案 B「紙細工のシェフが招く」: 生成りの紙・藍ののれん・鮭の朱。飾りは CSS と直書きの SVG と絵 1 枚(chef.webp)だけ。 */
+  /* 地は青海波。紙の面(body)の上と下の端だけ、うっすら透ける。 */
+  html { background-color: #ecd9a8; -webkit-text-size-adjust: 100%;
+         background-image:
+           radial-gradient(circle at 100% 150%, #ecd9a8 24%, #e3cc93 24%, #e3cc93 28%, #ecd9a8 28%, #ecd9a8 36%, #e3cc93 36%, #e3cc93 40%, transparent 40%, transparent),
+           radial-gradient(circle at 0 150%, #ecd9a8 24%, #e3cc93 24%, #e3cc93 28%, #ecd9a8 28%, #ecd9a8 36%, #e3cc93 36%, #e3cc93 40%, transparent 40%, transparent),
+           radial-gradient(circle at 50% 100%, #e3cc93 10%, #ecd9a8 10%, #ecd9a8 23%, #e3cc93 23%, #e3cc93 30%, #ecd9a8 30%, #ecd9a8 43%, #e3cc93 43%, #e3cc93 50%, #ecd9a8 50%, #ecd9a8 63%, #e3cc93 63%, #e3cc93 71%, transparent 71%, transparent),
+           radial-gradient(circle at 100% 50%, #e3cc93 5%, #ecd9a8 5%, #ecd9a8 15%, #e3cc93 15%, #e3cc93 20%, #ecd9a8 20%, #ecd9a8 29%, #e3cc93 29%, #e3cc93 34%, #ecd9a8 34%, #ecd9a8 44%, #e3cc93 44%, #e3cc93 49%, transparent 49%, transparent),
+           radial-gradient(circle at 0 50%, #e3cc93 5%, #ecd9a8 5%, #ecd9a8 15%, #e3cc93 15%, #e3cc93 20%, #ecd9a8 20%, #ecd9a8 29%, #e3cc93 29%, #e3cc93 34%, #ecd9a8 34%, #ecd9a8 44%, #e3cc93 44%, #e3cc93 49%, transparent 49%, transparent);
+         background-size: 80px 40px; }
+  body { position: relative; box-sizing: border-box; margin: 0 auto; padding: 0 16px 26px;
+         min-height: 100vh; min-height: 100svh; text-align: center; color: #3a2a1a;
+         background: linear-gradient(rgba(253, 241, 207, .6), #fdf1cf 400px, #fdf1cf calc(100% - 110px), rgba(253, 241, 207, .78));
+         font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  p { margin: 14px 0 0; line-height: 1.55; }
+
+  /* 飾りの層(のれん・提灯・波)。字とは重ねない。押せない。 */
+  .deco { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+  .noren { position: absolute; z-index: 1; top: 0; left: 0; display: block; width: 100%; height: 80px;
+           filter: drop-shadow(0 4px 5px rgba(20, 20, 50, .3)); }
+  .lan { position: absolute; top: 58px; width: 40px; height: 84px; transform-origin: 50% 0;
+         filter: drop-shadow(0 3px 9px rgba(226, 96, 40, .4));
+         animation: sway 5.5s ease-in-out infinite alternate; }
+  .lan-l { left: 12px; }
+  .lan-r { right: 12px; animation-delay: -2.3s; }
+  @keyframes sway { from { transform: rotate(-2.2deg); } to { transform: rotate(2.2deg); } }
+  @media (prefers-reduced-motion: reduce) { .lan { animation: none; } }
+  .nami { display: none; position: absolute; left: 0; bottom: 0; width: 100%; height: 76px;
+          filter: drop-shadow(0 -2px 4px rgba(60, 40, 10, .22)); }
+
+  /* のれんの上の題 */
+  h1 { position: relative; z-index: 1; box-sizing: border-box; height: 80px; margin: 0 -16px; padding-top: 14px;
+       font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+       font-size: 25px; line-height: 1.3; letter-spacing: .1em; color: #fff3d0;
+       text-shadow: 0 1.5px 0 rgba(15, 18, 50, .6); }
+
+  /* シェフ(紙の輪を 2 枚、後ろに重ねる)。足元は合言葉の札の後ろに隠れる。 */
+  .chef { position: relative; z-index: 0; width: 220px; max-width: 58vw; margin: 6px auto -24px; }
+  .chef img { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 7px rgba(40, 30, 60, .3)); }
+  .chef::before, .chef::after { content: ""; position: absolute; z-index: -1; left: 50%; top: 47%; border-radius: 50%; }
+  .chef::before { width: 126%; padding-top: 126%; transform: translate(-48.5%, -51%); background: #f6d9a0;
+                  box-shadow: 0 5px 12px rgba(120, 80, 20, .24); }
+  .chef::after { width: 111%; padding-top: 111%; transform: translate(-50%, -50%); background: #fffaf0;
+                 box-shadow: 0 3px 8px rgba(120, 80, 20, .22); }
+
+  /* 合言葉の札(白い紙。後ろに、少し傾いた金茶の紙を 1 枚) */
+  #box { position: relative; z-index: 1; padding: 14px 14px 17px; }
+  #box::before, #box::after { content: ""; position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; left: 0; border-radius: 22px; }
+  #box::before { background: #f0c98a; transform: rotate(-2.1deg); box-shadow: 0 6px 14px rgba(90, 60, 20, .2); }
+  #box::after { background: #fffdf6;
+                box-shadow: inset 0 0 0 1.5px rgba(199, 154, 62, .4), 0 1px 0 #e7d6ad, 0 14px 26px -12px rgba(70, 45, 10, .5); }
+  #box p.note, #box p:last-child { margin: 0; }
+  p.note { font-size: 12.5px; color: #5d4d3d; }
+  #box p.note { font-size: 12px; font-weight: bold; letter-spacing: .2em; color: #6b5a4a; }
+  #box p.note::before, #box p.note::after { content: ""; display: inline-block; vertical-align: middle; width: 26px; height: 1.5px;
+                                            margin: 0 10px 2px; background: #c79a3e; }
+  #code { display: block; margin: 6px 0 12px; padding: 5px 0 5px .15em; border: 1.5px dashed #e0c483; border-radius: 12px;
+          background: #fbf3da; color: #1b2050; font-size: 46px; line-height: 1.15; font-weight: bold; letter-spacing: 0.15em;
+          font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Roboto Mono", monospace; font-variant-numeric: slashed-zero; }
+
+  /* 札 2 つ。1 行目(日本語)を大きく、2 行目(英語)を小さく。 */
+  a.btn { display: block; border-radius: 14px; text-decoration: none; font-weight: bold; line-height: 1.45;
+          font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+          -webkit-tap-highlight-color: transparent; }
+  a.btn:focus-visible { outline: 3px solid #2d367a; outline-offset: 3px; }
+  a.btn:active { transform: translateY(2px); }
+  a.btn#open { padding: 12px 10px 11px; font-size: 13px; color: #fff;
+               background: linear-gradient(#c23a1c, #b8351a);
+               box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 4px 0 #8a2610, 0 12px 16px -8px rgba(138, 38, 16, .6); }
+  a.btn#open::first-line { font-size: 17px; }
+  a.btn#get { margin: 0 14px; padding: 9px 10px 8px; font-size: 12px; color: #2d367a; background: #fffdf6;
+              border: 2px solid #2d367a; box-shadow: 0 3px 0 #2d367a; }
+  a.btn#get::first-line { font-size: 15px; }
+  #help { margin-top: 15px; }
+  /* 細い画面: 札の 1 行目が折れないように、少し詰める */
+  @media (max-width: 359px) {
+    #box { padding-left: 10px; padding-right: 10px; }
+    a.btn#open { padding-left: 4px; padding-right: 4px; }
+    a.btn#open::first-line { font-size: 15.5px; }
+    #code { font-size: 42px; }
+  }
+
+  /* 広い画面: 紙の面を 1 枚、地の上に浮かせる */
+  @media (min-width: 500px) {
+    body { max-width: 420px; min-height: 0; margin: 40px auto; margin-top: max(40px, calc((100vh - 820px) / 2)); padding-bottom: 34px; border-radius: 30px;
+           box-shadow: 0 0 0 1px rgba(199, 154, 62, .35), 0 30px 60px -22px rgba(70, 45, 10, .5); }
+  }
+  /* 背の高い画面: シェフを大きく。下の端に波(字に被らないよう、下の余白の中に置く) */
+  @media (min-height: 760px) {
+    body { padding-bottom: 106px; }
+    .nami { display: block; }
+    .chef { width: 250px; max-width: 64vw; }
+  }
+</style>
+</head>
+<body>
+<!--
+  招待のページ(送る文のリンクと QR の行き先。形は …/j/#://join/ + 合言葉)。
+  合言葉は必ず # の後ろ(サーバーへ送られない)。書く先は画面の字と札の行き先だけ。題・クエリに入れず、履歴も書き換えない。
+  何も記録せず、どこにも送らず、外の物を読まない。自動ではアプリを開かない。
+  印はこのページの定数 invite の 1 つ(?ct= は読まない)。端末の見分けと店の番号は入手ページに任せる。
+  フォルダの名前 j と、目印 #://join/ は変えない(アプリが配るリンクと QR の形)。
+-->
+<div class="deco" aria-hidden="true">
+  <svg class="noren" viewBox="0 0 420 80" preserveAspectRatio="none">
+    <polygon points="0,4 84,4 84,54 82,76 0,76" fill="#2d367a"/>
+    <polygon points="84,4 168,4 168,54 166,78 86,78 84,54" fill="#293272"/>
+    <polygon points="168,4 252,4 252,54 250,75 170,75 168,54" fill="#2d367a"/>
+    <polygon points="252,4 336,4 336,54 334,78 254,78 252,54" fill="#293272"/>
+    <polygon points="336,4 420,4 420,76 338,76 336,54" fill="#2d367a"/>
+    <g fill="#3a4490" fill-opacity=".45">
+      <polygon points="0,4 84,4 84,36"/><polygon points="168,4 252,4 168,40"/><polygon points="336,4 420,4 420,34"/>
+      <polygon points="84,4 168,4 84,30"/><polygon points="252,4 336,4 336,38"/>
+    </g>
+    <g fill="#1b2050" fill-opacity=".4">
+      <polygon points="0,76 82,76 0,50"/><polygon points="86,78 166,78 168,56"/><polygon points="170,75 250,75 252,52"/>
+      <polygon points="254,78 334,78 252,58"/><polygon points="338,76 420,76 420,48"/>
+    </g>
+    <rect width="420" height="7" fill="#8a5a2b"/>
+    <rect width="420" height="2.5" fill="#b9833f"/>
+  </svg>
+  <svg class="lan lan-l" viewBox="0 0 44 92">
+    <path d="M22 0v26" stroke="#5a3a1c" stroke-width="1.6"/>
+    <rect x="14" y="24" width="16" height="6" rx="1.5" fill="#1b2050"/>
+    <polygon points="13,30 31,30 41,44 41,62 31,76 13,76 3,62 3,44" fill="#d93a22"/>
+    <polygon points="13,30 22,30 22,76 13,76 3,62 3,44" fill="#ee5a3a"/>
+    <polygon points="13,30 31,30 41,44 22,48 3,44" fill="#f98a66" fill-opacity=".75"/>
+    <polygon points="3,62 22,58 41,62 31,76 13,76" fill="#a82814" fill-opacity=".7"/>
+    <rect x="15" y="76" width="14" height="5" rx="1.5" fill="#1b2050"/>
+    <path d="M22 81v9" stroke="#c79a3e" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+  <svg class="lan lan-r" viewBox="0 0 44 92">
+    <path d="M22 0v26" stroke="#5a3a1c" stroke-width="1.6"/>
+    <rect x="14" y="24" width="16" height="6" rx="1.5" fill="#1b2050"/>
+    <polygon points="13,30 31,30 41,44 41,62 31,76 13,76 3,62 3,44" fill="#d93a22"/>
+    <polygon points="13,30 22,30 22,76 13,76 3,62 3,44" fill="#ee5a3a"/>
+    <polygon points="13,30 31,30 41,44 22,48 3,44" fill="#f98a66" fill-opacity=".75"/>
+    <polygon points="3,62 22,58 41,62 31,76 13,76" fill="#a82814" fill-opacity=".7"/>
+    <rect x="15" y="76" width="14" height="5" rx="1.5" fill="#1b2050"/>
+    <path d="M22 81v9" stroke="#c79a3e" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+  <svg class="nami" viewBox="0 0 420 76" preserveAspectRatio="xMidYMax slice">
+    <g fill="#f0c98a"><circle cx="0" cy="70" r="40"/><circle cx="70" cy="70" r="40"/><circle cx="140" cy="70" r="40"/><circle cx="210" cy="70" r="40"/><circle cx="280" cy="70" r="40"/><circle cx="350" cy="70" r="40"/><circle cx="420" cy="70" r="40"/></g>
+    <g fill="#f8e2b0"><circle cx="0" cy="70" r="27"/><circle cx="70" cy="70" r="27"/><circle cx="140" cy="70" r="27"/><circle cx="210" cy="70" r="27"/><circle cx="280" cy="70" r="27"/><circle cx="350" cy="70" r="27"/><circle cx="420" cy="70" r="27"/></g>
+    <g fill="#2d367a"><circle cx="-35" cy="82" r="40"/><circle cx="35" cy="82" r="40"/><circle cx="105" cy="82" r="40"/><circle cx="175" cy="82" r="40"/><circle cx="245" cy="82" r="40"/><circle cx="315" cy="82" r="40"/><circle cx="385" cy="82" r="40"/><circle cx="455" cy="82" r="40"/></g>
+    <g fill="#3a4490"><circle cx="-35" cy="82" r="28"/><circle cx="35" cy="82" r="28"/><circle cx="105" cy="82" r="28"/><circle cx="175" cy="82" r="28"/><circle cx="245" cy="82" r="28"/><circle cx="315" cy="82" r="28"/><circle cx="385" cy="82" r="28"/><circle cx="455" cy="82" r="28"/></g>
+    <g fill="#293272"><circle cx="-35" cy="82" r="16"/><circle cx="35" cy="82" r="16"/><circle cx="105" cy="82" r="16"/><circle cx="175" cy="82" r="16"/><circle cx="245" cy="82" r="16"/><circle cx="315" cy="82" r="16"/><circle cx="385" cy="82" r="16"/><circle cx="455" cy="82" r="16"/></g>
+  </svg>
+</div>
+<h1>にぎりパニック</h1>
+<div class="chef" aria-hidden="true"><img src="chef.webp" width="220" height="233" alt=""></div>
+<div id="box" hidden>
+  <p class="note">合言葉 / ROOM CODE</p>
+  <p id="code"></p>
+  <p><a class="btn" id="open">持っている人: アプリで部屋に入る<br>Have the app? Join the room</a></p>
+</div>
+<p><a class="btn" id="get" href="../get.html?ct=invite">まだの人: アプリを入手する<br>Don't have it yet? Get the app</a></p>
+<p class="note" id="help" hidden>開かない時は、Safari で開き直すか、アプリの「みんなで遊ぶ」→「部屋に入る」で合言葉を入れてね。<br>If it doesn't open, reopen this page in Safari, or enter the code in the app: PLAY ONLINE → JOIN ROOM.</p>
+<script>
+(function () {
+  var GET = '../get.html?ct=invite';
+  var m = /^#:\/\/join\/([A-Za-z0-9]{6})$/.exec(location.hash);
+  if (!m) { location.replace(GET); return; }
+  var code = m[1].toUpperCase();
+  document.getElementById('code').textContent = code;
+  document.getElementById('open').href = 'nigiripanic://join/' + code;
+  document.getElementById('box').hidden = false;
+  document.getElementById('help').hidden = false;
+  window.addEventListener('hashchange', function () { location.reload(); });
+})();
+</script>
+</body>
+</html>
